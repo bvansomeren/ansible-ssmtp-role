@@ -1,0 +1,4 @@
+---
+
+  - name: set alternative MTA to ssmtp
+    command: alternatives --set mta /usr/sbin/sendmail.ssmtp

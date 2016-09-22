@@ -1,0 +1,7 @@
+---
+
+  - name: ensure FreeBSD /etc/mail/mailer.conf is updated to use ssmtp
+    copy:
+      src: mailer.conf
+      dest: /etc/mail/mailer.conf
+      backup: yes

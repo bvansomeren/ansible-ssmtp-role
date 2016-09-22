@@ -1,0 +1,45 @@
+---
+# defaults file for bvansomeren.ssmtp
+
+#From the ssmtp.conf manpage
+#Root    The user that gets all mail for userids less than 1000. If blank, address rewriting is disabled.
+ssmtp_root: postmaster
+
+#Mailhub  The host to send mail to, in the form host | IP_addr [: port].  The default port is 25.
+ssmtp_mailhub: mail
+     
+#RewriteDomain The domain from which mail seems to come.  for user authentication.
+#ssmtp_rewrite_domain: "" 
+
+#Hostname The full qualified name of the host.  If not specified, the host is queried for its hostname.
+#ssmtp_hostname: ""
+
+#FromLineOverride Specifies whether the From header of an email, if any, may override the default domain.  The default is no
+ssmtp_fromlineoverride: "NO"
+
+#UseTLS  Specifies whether ssmtp uses TLS to talk to the SMTP server.
+ssmtp_usetls: "YES"
+
+#UseSTARTTLS Specifies whether ssmtp does a EHLO/STARTTLS before starting SSL negotiation.  See RFC 2487.
+ssmtp_usestarttls: "NO"
+
+#TLSCert The file name of an RSA certificate to use for TLS, if required.
+#ssmtp_tlscert: ""
+
+#TLSKey  The file name of an RSA key to use for TLS, if required.
+#ssmtp_tlskey: ""
+
+#TLS_CA_File A file of trusted certificates for validating the server, if required.
+#ssmtp_tls_ca_file: ""
+
+#TLS_CA_Dir A directory of trusted certificates for validating the server, if required.
+#sstmp_tls_ca_dir: ""
+
+#AuthUser The user name to use for SMTP AUTH.  The default is blank, in which case SMTP AUTH is not used.  sent without
+ssmtp_authuser: ""
+
+#AuthPass The password to use for SMTP AUTH.
+ssmtp_authpass: ""
+
+#AuthMethod The authorization method to use.  If unset, plain text is used.  May also be set to cram-md5
+ssmtp_authmethod: ""

@@ -1,0 +1,27 @@
+---
+# tasks file for bvansomeren.ssmtp
+  
+  
+  - name: Include OS-specific variables.
+    include_vars: "{{ ansible_os_family }}.yml"
+    
+  - name: ensure SSMTP is installed
+    package:
+      name: "{{ ssmtp_package_name }}" 
+      state: present
+
+  - name: ensure ssmtp.conf is setup
+    template:
+      src: ssmtp.conf
+      dest: "{{ ssmtp_config_folder }}/ssmtp.conf"
+
+  - name: ensure revaliases are setup
+    template: 
+      src: revaliases 
+      dest: "{{ ssmtp_config_folder }}/revaliases"
+
+  - include: RedHat.yml
+    when: ansible_os_family == 'RedHat'
+
+  - include: FreeBSD.yml
+    when: ansible_os_family == 'FreeBSD'
